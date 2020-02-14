@@ -1,0 +1,483 @@
+﻿body {
+    background-color: #006699;
+}
+
+h2 {
+    color: #5381DF;
+    text-align: center;
+    font: Verdana;
+    font-size: 2vw;
+}
+
+p {
+    color: #efefef;
+    font-size: 20px;
+}
+
+table td {
+    padding: 5px;
+    border-spacing: 0;
+}
+
+input[type=text] {
+    width: 100%;
+    height: 10%;
+    padding: 2% 4%;
+    margin: 4px 0;
+    box-sizing: border-box;
+    border-radius: 6px;
+}
+
+.heading {
+    color: #efefef;
+    text-align: center;
+    font: Verdana;
+    font-size: 3vw;
+}
+
+.menuOptions {
+    color: #efefef;
+    text-align: center;
+    font: Verdana;
+    font-size: 1.7vw;
+}
+
+.label {
+    text-align: center;
+    font: Verdana;
+    font-size: 1.4vw;
+    padding: 2%;
+}
+
+.button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #00acee;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 1.3vw;
+    padding: 0.75%;
+    width: 40%;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 0.5%;
+    vertical-align: middle;
+}
+
+    .button:hover {
+        background-color: #268AC2;
+    }
+
+    .button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+        .button span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20%;
+            transition: 0.5s;
+        }
+
+    .button:hover span {
+        padding-right: 15%;
+    }
+
+        .button:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+
+.divAbout {
+    background-color: #006699;
+    width: 70%;
+    text-align: center;
+    padding-top: 5%;
+}
+
+.divOuter {
+    background-color: #006699;
+    color: #fff;
+    height: 87vh;
+    width: 99vw;
+    margin: 0px auto;
+    overflow: auto;
+    border-radius: 6px;
+}
+
+.divLeft {
+    background-color: #efefef;
+    color: #000;
+    height: 100%;
+    width: 20%;
+    float: left;
+    overflow: auto;
+    border-radius: 6px;
+}
+
+.divMiddle {
+    background-color: #006699;
+    color: #000;
+    height: 100%;
+    width: 60%;
+    float: left;
+    border-radius: 6px;
+    overflow: auto;
+    padding-left: 0.5%;
+}
+
+.divRight {
+    background-color: #006699;
+    color: #000;
+    height: 100%;
+    width: 20%;
+    float: right;
+    overflow: auto;
+    border-radius: 6px;
+    padding-left: 0.5%;
+}
+
+.divHeading {
+    background-color: #efefef;
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+}
+
+.divHeadingSmall {
+    background-color: #efefef;
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+    display: none;
+}
+
+.divProfilePicture {
+    background-color: #efefef;
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 0;
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 20%;
+}
+
+.divProfileName {
+    background-color: #efefef;
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 5%;
+}
+
+.divProfileInfo {
+    background-color: #efefef;
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 5%;
+}
+
+.divTable {
+    background-color: #D7F0FE;
+    height: 99vh;
+    width: 100%;
+    overflow: auto;
+    border-radius: 6px;
+}
+
+.divSoloOuter {
+    background-color: #006699;
+    width: 100%;
+    height: 99%;
+    padding-left: 40%;
+}
+
+.divSoloSearch {
+    background-color: #006699;
+    width: 20vw;
+    height: auto;
+}
+
+.divMenuOuter {
+    background-color: #006699;
+    color: #fff;
+    height: auto;
+    width: 100%;
+    overflow: auto;
+    padding-top: 20%;
+    border-radius: 6px;
+    padding-left: 2%;
+}
+
+.divMenuUpper {
+    background-color: #006699;
+    color: #fff;
+    height: auto;
+    width: 100%;
+    overflow: auto;
+}
+
+.divMenuLeft {
+    background-color: #006699;
+    color: white;
+    height: auto;
+    width: 100%;
+    vertical-align: middle;
+}
+
+.divMenuRight {
+    background-color: #006699;
+    color: #000;
+    height: auto;
+    width: 100%;
+    vertical-align: middle;
+    padding-top: 3%;
+}
+
+.divMenuBottom {
+    background-color: #006699;
+    color: #000;
+    height: auto;
+    width: 100%;
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 5%;
+}
+
+.divNoData {
+    height: 15vh;
+    width: 18vw;
+    margin: 1vh auto;
+    padding-top: 15vh;
+    padding-left: 5vw;
+}
+
+.profileInfo {
+    color: #5381DF;
+    text-align: left;
+    font: Verdana;
+    font-size: 1.5vw;
+}
+
+.profileInfoDesc {
+    color: #5381DF;
+    text-align: center;
+    font: Verdana;
+    font-size: 1.5vw;
+}
+
+.noData {
+    color: white;
+    text-align: left;
+    font: Verdana;
+    font-size: 1.8vw;
+}
+
+.tableData {
+    width: 100%;
+    font-family: Arial;
+    text-align: center;
+    background-color: #D7F0FE;
+    height: 98vh;
+}
+
+.columnTweet {
+    width: 100%;
+    background-color: #B8DBFD;
+    border: 1px solid #B8DBFD;
+    border-radius: 6px;
+    font-size: 1.5vw;
+}
+
+.columnExtra {
+    width: 10%;
+    background-color: #9EC3E8;
+    border: 1px solid #9EC3E8;
+    border-radius: 6px;
+    font-size: 1.5vw;
+}
+
+.blank_row {
+    height: 1vh;
+    background-color: #D7F0FE;
+}
+
+.imageProfile {
+    max-width: 60%;
+    height: auto;
+    border-radius: 100px;
+}
+
+.imageMedia {
+    max-width: 80%;
+    height: auto;
+}
+
+.videoMedia {
+    max-width: 80%;
+    height: auto;
+}
+
+@media screen and (max-width: 800px) {
+    .columnTweet {
+        font-size: 15px;
+    }
+
+    .columnExtra {
+        font-size: 12px;
+    }
+
+    .heading {
+        font-size: 25px;
+    }
+
+    .menuOptions {
+        font-size: 15px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    .profileInfo {
+        font-size: 15px;
+    }
+
+    .profileInfoDesc {
+        font-size: 15px;
+    }
+
+    .label {
+        font-size: 15px;
+    }
+
+    .button {
+        font-size: 12px;
+        width: 60%;
+    }
+
+    .imageProfile {
+        max-width: 94%;
+    }
+
+    .divProfilePicture {
+        padding-left: 3%;
+    }
+
+    .divSoloSearch {
+        width: 30vw;
+    }
+
+    .imageMedia {
+        max-width: 40vw;
+    }
+
+    .videoMedia {
+        max-width: 40vw;
+    }
+
+    .divAbout {
+        width: 100%;
+        padding-left: 5%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .divLeft {
+        width: 100%;
+        height: auto;
+        padding-top: 5%;
+    }
+
+    .divMiddle {
+        width: 100%;
+        height: auto;
+        padding-top: 4%;
+        overflow: visible;
+    }
+
+    .divRight {
+        width: 100%;
+        height: auto;
+        padding-bottom: 10%;
+    }
+
+    .divTable {
+        overflow: visible;
+    }
+
+    .divMenuOuter {
+        padding-top: 5%;
+        width: 80%;
+        padding-left: 20%;
+    }
+
+    .imageProfile {
+        max-width: 40%;
+    }
+
+    .divProfilePicture {
+        width: 90%;
+        padding-top: 5%;
+    }
+
+    .divProfileName {
+        width: 90%;
+    }
+
+    .divProfileInfo {
+        width: 90%;
+    }
+
+    .divHeading {
+        display: none;
+    }
+
+    .divHeadingSmall {
+        display: inline;
+    }
+
+    .divNoData {
+        padding-top: 0;
+        width: 90%;
+    }
+
+    .divSoloSearch {
+        width: 100%;
+    }
+
+    .divSoloOuter {
+        padding-left: 0;
+    }
+
+    .noData {
+        font-size: 4vw;
+        text-align: center;
+    }
+
+    .imageMedia {
+        max-width: 100%;
+    }
+
+    .videoMedia {
+        max-width: 100%;
+    }
+
+    .label {
+        font-size: 18px;
+    }
+}
