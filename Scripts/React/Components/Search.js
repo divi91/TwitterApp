@@ -8,15 +8,13 @@ export class Search extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { screenName: '', twitterdata: [], loading: true, };
-
+        this.state = { screenName: 'iamsrk', twitterdata: [], loading: true, };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(event) {
         this.setState({ screenName: event.target.value });
-        console.log(this.screenName);
     }
 
     handleSubmit(event) {
@@ -76,7 +74,7 @@ export class Search extends Component {
                         </div>
                     </div>
                     <div className="divMiddle">
-                        <TweetData datatweet={twitterdata.tweets} />
+                        <TweetData datatweet={twitterdata.Tweets} />
                     </div>
                 </div>
             );
@@ -110,7 +108,6 @@ export class Search extends Component {
 
 
     render() {
-
         let contents = this.state.loading
             ? this.renderDataTableInitial()
             : this.renderDataTable(this.state.twitterdata);
@@ -126,24 +123,25 @@ export class Search extends Component {
     async populateTwitterData() {
 
         try {
-            console.log("Inside Populate data");
-            const response = await fetch('home' + '?screenName=$' + this.state.screenName, {
-                method: 'GET',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
+                const response = await fetch('home/get?screenName='+ this.state.screenName, {
+                    method: 'GET',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    }
+                });
+                let data = [];
+                if (response.statusText == "OK") {
+                    data = await response.json();
+                    if (Object.keys(data).length === 0) {
+                        data = "NoData";
+                    }
                 }
-            });
-            let data = [];
-            if (response.statusText == "OK") {
-                data = await response.json();
-                console.log(data);
+                else {
+                    data = "NoData";
+                }
+                this.setState({ twitterdata: data, loading: false });
             }
-            else {
-                data = "NoData"
-            }
-            this.setState({ twitterdata: data, loading: false });
-        }
         catch (e) {
             console.log('EXCEPTION THROWN: ' + e);
         }

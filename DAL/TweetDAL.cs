@@ -8,12 +8,12 @@ namespace TwitterReactMVC.DAL
 {
     public class TweetDAL
     {
-        string key = ConfigurationManager.AppSettings["tKey2"].ToString();
-
         private static string GetAuthToken()
         {
-            string key = ConfigurationManager.AppSettings["tKey2"].ToString();
-            if (string.IsNullOrEmpty(key))
+            string credentials = Convert.ToBase64String(new UTF8Encoding()
+                              .GetBytes(ConfigurationManager.AppSettings["tKey"] + ":" + ConfigurationManager.AppSettings["tSecret"])).ToString();
+
+            if (string.IsNullOrEmpty(credentials))
             {
                 throw new HttpListenerException(400, "Twitter key is invalid");
             }
@@ -23,7 +23,7 @@ namespace TwitterReactMVC.DAL
 
             post.Method = "POST";
             post.ContentType = "application/x-www-form-urlencoded;charset=UTF-8";
-            post.Headers[HttpRequestHeader.Authorization] = "Basic " + key;
+            post.Headers[HttpRequestHeader.Authorization] = "Basic " + credentials;
             var reqbody = Encoding.UTF8.GetBytes("grant_type=client_credentials");
             post.ContentLength = reqbody.Length;
             using (var req = post.GetRequestStream())

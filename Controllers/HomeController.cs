@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using TwitterReactMVC.BLL;
-using TwitterReactMVC.Models;
 
 namespace TwitterReactMVC.Controllers
 {
@@ -15,11 +10,10 @@ namespace TwitterReactMVC.Controllers
             return View ();
         }
         [HttpGet]
-        public TwitterData Get()
+        public string Get(string screenName)
         {
-            string screenName = Request.QueryString.ToString();
             TwitterDataBLL tBLL = new TwitterDataBLL();
-            TwitterData tData = tBLL.GetTwitterData(screenName);
+            string tData = tBLL.GetTwitterData(screenName);
             return tData;
         }
     }

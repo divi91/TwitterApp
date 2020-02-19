@@ -2,12 +2,13 @@
 using Newtonsoft.Json.Linq;
 using TwitterReactMVC.DAL;
 using TwitterReactMVC.Models;
+using System.Web.Script.Serialization;
 
 namespace TwitterReactMVC.BLL
 {
     public class TwitterDataBLL
     {
-        public TwitterData GetTwitterData(string screenName)
+        public string GetTwitterData(string screenName)
         {
             TweetDAL tDAL = new TweetDAL();
             string data = tDAL.GetData(screenName);
@@ -89,10 +90,13 @@ namespace TwitterReactMVC.BLL
                 }
 
                 TwitterData tProfile = new TwitterData(tProfileInfo, tData);
-                return tProfile;
+                var tProfileJson = new JavaScriptSerializer().Serialize(tProfile);
+                return tProfileJson;
             }
-
-            return null;
+            else
+            {
+                return "{}";
+            }
         }
     }
 }
